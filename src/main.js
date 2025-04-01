@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="country-list">
             ${countries.map(country => `
               <div class="country-card" data-code="${country.cca3}">
-                <img src="${country.flags.svg}" alt="${country.name.common} flag" width="50">
+                <img src="${country.flags.svg}" alt="${country.name.common} flag" crossorigin="anonymous" width="50">
                 <h3>${country.name.common}</h3>
                 <p>Capital: ${country.capital?.[0] || 'N/A'}</p>
               </div>
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const html = `
           <button id="back-button">← Back to all countries</button>
           <div class="country-detail">
-            <img src="${country.flags.svg}" alt="${country.name.common} flag" width="100">
+            <img src="${country.flags.svg}" alt="${country.name.common} flag" crossorigin="anonymous" width="100">
             <h1>${country.name.common}</h1>
             <p>Official Name: ${country.name.official}</p>
             <p>Capital: ${country.capital?.[0] || 'N/A'}</p>
