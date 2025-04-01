@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const html = `
           <button id="back-button">← Back to all countries</button>
           <div class="country-detail">
-            <img src="${country.flags.png}" alt="${country.name.common} flag" width="100">
+            <img src="${country.flags.svg}" alt="${country.name.common} flag" width="100">
             <h1>${country.name.common}</h1>
             <p>Official Name: ${country.name.official}</p>
             <p>Capital: ${country.capital?.[0] || 'N/A'}</p>
