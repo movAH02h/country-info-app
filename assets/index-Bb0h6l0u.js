@@ -12,7 +12,7 @@
         `;c.innerHTML=t,document.querySelectorAll(".country-card").forEach(e=>{e.addEventListener("click",()=>{const n=e.getAttribute("data-code");i(n)})})}).catch(o=>{c.innerHTML=`<p class="error">Failed to load countries: ${o.message}</p>`})}function i(o){fetch(`https://restcountries.com/v3.1/alpha/${o}`).then(t=>t.json()).then(t=>{var a;const e=t[0],n=`
           <button id="back-button">← Back to all countries</button>
           <div class="country-detail">
-            <img src="${e.flags.png}" alt="${e.name.common} flag" width="100">
+            <img src="${e.flags.svg}" alt="${e.name.common} flag" width="100">
             <h1>${e.name.common}</h1>
             <p>Official Name: ${e.name.official}</p>
             <p>Capital: ${((a=e.capital)==null?void 0:a[0])||"N/A"}</p>
