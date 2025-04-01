@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="country-list">
             ${countries.map(country => `
               <div class="country-card" data-code="${country.cca3}">
-                <img src="${country.flags.png}" alt="${country.name.common} flag" width="50">
+                <img src="${country.flags.svg}" alt="${country.name.common} flag" width="50">
                 <h3>${country.name.common}</h3>
                 <p>Capital: ${country.capital?.[0] || 'N/A'}</p>
               </div>
