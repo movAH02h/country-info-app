@@ -3,22 +3,22 @@
           <div class="country-list">
             ${o.map(e=>{var n;return`
               <div class="country-card" data-code="${e.cca3}">
-                <img src="${e.flags.svg}" alt="${e.name.common} flag" width="50">
+                <img src="${e.flags.svg}" alt="${e.name.common} flag" crossorigin="anonymous" width="50">
                 <h3>${e.name.common}</h3>
                 <p>Capital: ${((n=e.capital)==null?void 0:n[0])||"N/A"}</p>
               </div>
             `}).join("")}
           </div>
-        `;c.innerHTML=t,document.querySelectorAll(".country-card").forEach(e=>{e.addEventListener("click",()=>{const n=e.getAttribute("data-code");i(n)})})}).catch(o=>{c.innerHTML=`<p class="error">Failed to load countries: ${o.message}</p>`})}function i(o){fetch(`https://restcountries.com/v3.1/alpha/${o}`).then(t=>t.json()).then(t=>{var a;const e=t[0],n=`
+        `;c.innerHTML=t,document.querySelectorAll(".country-card").forEach(e=>{e.addEventListener("click",()=>{const n=e.getAttribute("data-code");i(n)})})}).catch(o=>{c.innerHTML=`<p class="error">Failed to load countries: ${o.message}</p>`})}function i(o){fetch(`https://restcountries.com/v3.1/alpha/${o}`).then(t=>t.json()).then(t=>{var s;const e=t[0],n=`
           <button id="back-button">← Back to all countries</button>
           <div class="country-detail">
-            <img src="${e.flags.svg}" alt="${e.name.common} flag" width="100">
+            <img src="${e.flags.svg}" alt="${e.name.common} flag" crossorigin="anonymous" width="100">
             <h1>${e.name.common}</h1>
             <p>Official Name: ${e.name.official}</p>
-            <p>Capital: ${((a=e.capital)==null?void 0:a[0])||"N/A"}</p>
+            <p>Capital: ${((s=e.capital)==null?void 0:s[0])||"N/A"}</p>
             <p>Region: ${e.region}</p>
             <p>Population: ${e.population.toLocaleString()}</p>
             <p>Languages: ${Object.values(e.languages||{}).join(", ")||"N/A"}</p>
-            <p>Currency: ${e.currencies?Object.values(e.currencies).map(s=>`${s.name} (${s.symbol})`).join(", "):"N/A"}</p>
+            <p>Currency: ${e.currencies?Object.values(e.currencies).map(a=>`${a.name} (${a.symbol})`).join(", "):"N/A"}</p>
           </div>
         `;c.innerHTML=n,document.getElementById("back-button").addEventListener("click",r)}).catch(t=>{c.innerHTML=`<p class="error">Failed to load country details: ${t.message}</p>`})}r()});
