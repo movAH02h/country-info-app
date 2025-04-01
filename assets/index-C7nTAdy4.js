@@ -3,7 +3,7 @@
           <div class="country-list">
             ${o.map(e=>{var n;return`
               <div class="country-card" data-code="${e.cca3}">
-                <img src="${e.flags.png}" alt="${e.name.common} flag" width="50">
+                <img src="${e.flags.svg}" alt="${e.name.common} flag" width="50">
                 <h3>${e.name.common}</h3>
                 <p>Capital: ${((n=e.capital)==null?void 0:n[0])||"N/A"}</p>
               </div>
